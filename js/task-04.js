@@ -6,23 +6,25 @@
 
 let counterValue = 0;
 
-const incrementBtn = document.querySelector('[data-action="increment"]');
-const value = document.querySelector('#value');
-const decrementBtn = document.querySelector('[data-action="decrement"]');
+const refs = {
+    incrementBtn: document.querySelector('[data-action="increment"]'),
+    value: document.querySelector('#value'),
+    decrementBtn: document.querySelector('[data-action="decrement"]'),
+};
 
 
 
 const increment = () => {
   counterValue += 1;
-  value.textContent = counterValue;
+  refs.value.textContent = counterValue;
 };
 
 const decrement = () => {
   counterValue -= 1;
-  value.textContent = counterValue;
+  refs.value.textContent = counterValue;
 };
 
-incrementBtn.addEventListener('click', increment);
-decrementBtn.addEventListener('click', decrement);
+refs.incrementBtn.addEventListener('click', increment);
+refs.decrementBtn.addEventListener('click', decrement);
  
 
