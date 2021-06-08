@@ -13,9 +13,14 @@ const ingredients = [
 
 const ingredientsContainerEl = document.querySelector('#ingredients');
 
-ingredients.forEach ((ingredient) => {
+const elems = ingredients.map((ingredient) => {
     const ingredientsEl = document.createElement('li');
     ingredientsEl.textContent = ingredient;
-    ingredientsContainerEl.append(ingredientsEl);
+ 
+  return ingredientsEl;
 });
+
+ingredientsContainerEl.append(...elems);
+
+
  
